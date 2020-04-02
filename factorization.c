@@ -6,11 +6,7 @@ int		check_overflow(char s, number num)
 
 	if (!max)
 	{
-		ft_memset(&max, 0xff, sizeof(max));
-		// if (max < 0)
-		// {
-		// 	ft_memset((unsigned char*)&max + sizeof(max) - 1, 0x7f, 1);
-		// }
+		INIT_MAX
 	}
 	if (num > max / 10 || (num >= max / 10 && (number)(s - '0') > max % 10))
 	{
@@ -59,9 +55,7 @@ int		print_err(int err)
 	else if (err == ERR_OVERFLOW)
 	{
 		ft_putstr("Error : Too large number. (Max = ");
-		ft_memset(&max, 0xff, sizeof(max));
-		// if (max < 0)
-		// 	ft_memset((unsigned char*)&max + sizeof(max) - 1, 0x7f, 1);
+		INIT_MAX
 		ft_put_positive_nbr(max);
 		ft_putstr(")\n");
 	}
@@ -96,8 +90,6 @@ void	factorization(number n)
 		}
 		else
 		{
-			// if (n / i <= i)
-			// 	return ;
 			i++;
 		}
 	}

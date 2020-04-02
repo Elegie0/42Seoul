@@ -9,6 +9,17 @@
 # define ERR_OVERFLOW 245
 # define ERR_WRONG_NUM 785
 typedef unsigned int number;
+# define U_SIGNED_TYPE
+# ifdef SIGNED_TYPE
+# define INIT_MAX\
+	ft_memset(&max, 0xff, sizeof(max));\
+	if (max < 0)\
+		ft_memset((unsigned char*)&max + sizeof(max) - 1, 0x7f, 1);
+# endif
+# ifdef U_SIGNED_TYPE
+# define INIT_MAX\
+	ft_memset(&max, 0xff, sizeof(max));
+# endif
 /*
 ** factorization.c
 */
