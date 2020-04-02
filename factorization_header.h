@@ -8,7 +8,7 @@
 # define ERR_TOO_MANY_ARGUMENTS 35234
 # define ERR_OVERFLOW 245
 # define ERR_WRONG_NUM 785
-typedef int number;
+typedef unsigned int number;
 /*
 ** factorization.c
 */
