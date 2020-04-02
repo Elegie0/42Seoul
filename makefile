@@ -16,10 +16,10 @@ $(NAME) : $(OBJ) factorization_header.h
 $(OBJ):%.o : %.c
 	$(CC) $(CFLAG) -c -o $@ $*.c
 
-cl:
+clean:
 	rm -rf ./*.o
 
-fcl:
+fclean:
 	rm -rf ./*.o $(NAME)
 
-re: fcl $(NAME)
+re: fclean $(NAME)
